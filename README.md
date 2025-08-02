@@ -1,33 +1,107 @@
-# Monad Blitz Bangalore Submission Process
+# 🏗 Scaffold-ETH 2
 
-1. Visit the `monad-blitz-bangalore` repo (link here) and fork it.
+<h4 align="center">
+  <a href="https://docs.scaffoldeth.io">Documentation</a> |
+  <a href="https://scaffoldeth.io">Website</a>
+</h4>
 
-![image](https://github.com/user-attachments/assets/ab46b2ea-ee0f-4237-87ef-c33bb1a94749)
+🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
 
-2. Give it your project name, a one-liner description, make sure you are forking `main` branch and click `Create Fork`.
+⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
 
-![image](https://github.com/user-attachments/assets/ffdebab7-c340-4e14-bd3c-36905f1016a3)
+- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
+- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
+- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
+- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
+- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
 
-3. In your fork you can make all the changes you want, add code of your project, create branches, add information to `README.md`, you can change anything and everything.
+![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
 
-4. Once you are done with your project and ready for submission, create a pull request.
+## 🏁 Tapnad - Multiplayer Coin Racing Game
 
-![image](https://github.com/user-attachments/assets/58aa7140-55db-49db-9361-332449dbe116)
+This dApp demonstrates a fun, interactive multiplayer game built on Monad testnet:
 
-![image](https://github.com/user-attachments/assets/5c8c61b1-23fd-4177-b06e-e8fca3a61ad4)
+### 🎮 Game Features
+- **Two-Coin Racing**: Players choose between Coin A (🟡) or Coin B (🔵)
+- **Collaborative Gameplay**: Multiple players can support the same coin
+- **Real-time Racing**: Live position updates on a circular track
+- **Smart Contract Logic**: Fair gameplay with 50ms tap cooldown
+- **Competitive Analytics**: Detailed race statistics and performance tracking
 
-5. Make sure you are create a pull request to the right repo `monad-developers/monad-blitz-bangalore`.
+### 🛣️ Game Flow
+1. **Home** (`/`): Welcome screen with game overview and "Go To Game" button
+2. **Game** (`/game`): Team selection, player lists, and live racing in one interface
+3. **Real-time Racing**: Countdown timer, tap mechanics, and live position updates
 
-![image](https://github.com/user-attachments/assets/41774ebc-d64c-43de-b3be-7e46d21bcaba)
+### 🚀 Smart Contract
+- **Race.sol**: Bitcoin vs Ethereum racing game contract
+- **Monad Testnet**: Deployed on Monad's high-performance blockchain
+- **Events**: Real-time game updates via contract events
+- **Demo Ready**: Organizer-controlled game start for presentations
 
-6. Make sure you see “Able to merge”, when creating a pull request then you can click `Create Pull Request`.
+### 🎯 Demo Instructions
+1. **Set Organizer Address**: Update `ORGANIZER_ADDRESS` in `/app/game/page.tsx` with your wallet address
+2. **Present Flow**: Home → "Go To Game" → Team Selection → Start Race → Live Racing
+3. **Mobile Friendly**: Optimized for mobile device demos
 
-![image](https://github.com/user-attachments/assets/b52f5e6f-9091-43af-9025-f2c61a7d1205)
+## Requirements
 
-7. Give the pull request your project name and a description of the project (describe as much as you can about your project you can even add video demo links) then click `Create pull request`.
+Before you begin, you need to install the following tools:
 
-![image](https://github.com/user-attachments/assets/9a3cc30a-498f-4d83-9060-adb11f88eff6)
+- [Node (>= v20.18.3)](https://nodejs.org/en/download/)
+- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
+- [Git](https://git-scm.com/downloads)
 
-8. Finally verify if you created your pull request correctly by checking the repo on which the pull request is created and the source and destination branch of the pull request!
+## Quickstart
 
-![image](https://github.com/user-attachments/assets/b16befcd-2c29-4520-aa70-29883306e85c)
+To get started with Scaffold-ETH 2, follow the steps below:
+
+1. Install dependencies if it was skipped in CLI:
+
+```
+cd my-dapp-example
+yarn install
+```
+
+2. Run a local network in the first terminal:
+
+```
+yarn chain
+```
+
+This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `packages/hardhat/hardhat.config.ts`.
+
+3. On a second terminal, deploy the test contract:
+
+```
+yarn deploy
+```
+
+This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
+
+4. On a third terminal, start your NextJS app:
+
+```
+yarn start
+```
+
+Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
+
+Run smart contract test with `yarn hardhat:test`
+
+- Edit your smart contracts in `packages/hardhat/contracts`
+- Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
+- Edit your deployment scripts in `packages/hardhat/deploy`
+
+
+## Documentation
+
+Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
+
+To know more about its features, check out our [website](https://scaffoldeth.io).
+
+## Contributing to Scaffold-ETH 2
+
+We welcome contributions to Scaffold-ETH 2!
+
+Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
